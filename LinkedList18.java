@@ -68,4 +68,55 @@ public class LinkedList18 {
         }
     }
 
+    public void removeFirst(){
+        if (!isEmpty()) {
+            if (!isEmpty()){
+                head = head.next;
+            } else {
+                System.out.println("Linked list kosong");
+            }
+        }
+    }
+
+    public void removeLast(){
+        if (isEmpty()){
+            System.out.println("Linked list kosong");
+        } else if (head.next == null){
+            head = null;
+        } else {
+            Node18 currentNode18 = head;
+
+            while (currentNode18.next != null){
+                if (currentNode18.next.next == null){
+                    currentNode18.next = null;
+                    break;
+                }
+
+                currentNode18 =currentNode18.next;
+            }
+        }
+    }
+
+    public void remove(int key) {
+        
+        if (isEmpty()) {
+            System.out.println("Linked list kosong");
+        
+        } else if (head.data == key) {
+            removeFirst();
+        } else {
+             Node18 currentNode18 = head;
+        
+            while (currentNode18.next != null) {
+                if (currentNode18.next.data == key) {
+                     currentNode18.next = currentNode18.next.next;
+                     break;
+                 }
+        
+                currentNode18 = currentNode18.next;
+             }
+        
+        }
+    }
+
 }
